@@ -1,0 +1,53 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+
+.blog{
+
+
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 5rem;
+
+        @include m.breakpoint-up(large){
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    &__meta{
+        border-bottom: 0.125rem solid rgba(0,0,0,.5);
+        padding: 0.75rem 0;
+        text-transform: uppercase;
+        color: rgba(0,0,0,.8);
+        margin-bottom: 2.5rem;
+    }
+
+
+    &__info{
+
+        p{
+            text-align: justify;
+            line-height: 1.7
+        }
+
+    }
+
+
+    &__image{
+        margin-bottom: 3rem;
+        overflow: hidden;
+
+        figure{
+
+            img{
+                transition: all 350ms ease-in-out;
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+        }
+    }
+
+}

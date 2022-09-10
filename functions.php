@@ -1,0 +1,127 @@
+<?php
+
+/**
+ * @since easythingz v1.0
+ * Including Easythingz Styles and Scripts
+    Stylesheet
+    Font
+    JavaScript
+ */
+
+function easythingz_assets_enqueue(){
+    wp_enqueue_style('customstyle', get_template_directory_uri().'/assets/dist/style.min.css', array(), '1.0.0', 'all');
+
+    wp_enqueue_style('montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800;900&display=swap', array(), '1.0.0','all');
+
+    wp_enqueue_script('customjs', get_template_directory_uri().'/assets/app/js/app.js', array(), '1.0.0', true);
+}
+
+
+add_action('wp_enqueue_scripts', 'easythingz_assets_enqueue');
+
+
+/**
+ * @since easythingz v1.0
+ * Activate theme support
+    Activate Menus Section
+    Register Menus
+
+    Custom Background
+    Custom Header
+    Custom Post thumbnails
+    Custom logo
+    Post formats
+    Widgets Registration
+
+ */
+
+ function easythingz_theme_setup(){
+
+    add_theme_support('menus');
+    register_nav_menu( 'primary', 'Header Navigation' );
+    register_nav_menu( 'secondary', 'Footer Navigation' );
+ }
+
+ add_action('init', 'easythingz_theme_setup');
+
+ add_theme_support('custom-background');
+ add_theme_support('custom-header');
+ add_theme_support('post-thumbnails');
+
+
+function easythingz_custom_logo() {
+	
+	add_theme_support( 'custom-logo', array(
+		'height' => 100,
+	   'width'  => 200,
+	) );
+
+}
+add_action( 'init', 'easythingz_custom_logo' );
+
+add_theme_support('post-formats', ['aside', 'image', 'video']);
+
+function easythingz_widget_setup(){
+
+   register_sidebar( [
+      'name' => 'Newsletter Sidebar',
+      'id' => 'sidebar-1',
+      'class' => 'custom',
+      'description' => __('Newsletter sidebar section'),
+      'before_widget' => '<section id="%1$s" class="sidebar__widget-content %2$s">',
+		'after_widget'  => '</section>',
+      'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>',
+		
+   ] );
+
+
+   register_sidebar( [
+      'name' => 'Social Sidebar',
+      'id' => 'sidebar-2',
+      'class' => 'custom',
+      'description' => __('Sidebar for social icons'),
+      'before_widget' => '<section id="%1$s" class="sidebar__widget-content %2$s">',
+		'after_widget'  => '</section>',
+      'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>',
+		
+   ] );
+
+
+
+   register_sidebar( [
+      'name' => 'Disclaimer Sidebar',
+      'id' => 'sidebar-3',
+      'class' => 'custom',
+      'description' => __('sidebar for disclaimer'),
+      'before_widget' => '<section id="%1$s" class="sidebar__widget-content %2$s">',
+		'after_widget'  => '</section>',
+      'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>',
+		
+   ] );
+
+
+
+
+   register_sidebar( [
+      'name' => 'Ads Sidebar 1',
+      'id' => 'sidebar-4',
+      'class' => 'custom',
+      'description' => __('Sidebar for ads'),
+      'before_widget' => '<section id="%1$s" class="sidebar__widget-content %2$s">',
+		'after_widget'  => '</section>',
+      'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>',
+		
+   ] );
+
+}
+
+add_action('widgets_init', 'easythingz_widget_setup');
+
+
+
+
+
