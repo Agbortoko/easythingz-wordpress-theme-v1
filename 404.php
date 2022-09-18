@@ -52,17 +52,9 @@
                  </div>
 
             </div>
-
-            
-
-          
-
-                <!-- <div class="notfound__widget">
-                     <?php //the_widget('WP_Widget_Archive'); ?>
-                </div> -->
         
 
-
+                    
         </div>
 
 
