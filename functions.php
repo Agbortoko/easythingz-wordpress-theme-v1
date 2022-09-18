@@ -146,6 +146,76 @@ add_action('widgets_init', 'easythingz_widget_setup');
  add_filter('the_generator', 'easythingz_remove_version');
 
 
+  /**
+ * ===========================================
+ *  Custom Post type
+ * ===========================================
+ */
+
+
+ function easythingz_custom_post_type(){
+
+   $labels = [
+      'name' => 'Courses',
+      'singular_name' => 'Course',
+      'add_new' => 'Add Course',
+      'all_items' => 'All Courses',
+      'add_new_item' => 'Add Course',
+      'edit_item' => 'Edit Course',
+      'new_item' => 'New Course',
+      'view_item' => 'View Course',
+      'search_item' => 'Search Course',
+      'not_found' => 'No Course Found',
+      'not_found_in_trash' => 'No Course found in trash',
+      'parent_item_colon' => 'Parent Course'
+   ];
+
+
+   $args = [
+
+      'labels' => $labels,
+      'public' => true,
+      'has_archive' => true,
+      'publicly_queryable' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+      'show_in_nav_menus' => true,
+      'show_in_admin_bar',
+
+      'supports' => [
+         'title',
+         'editor',
+         'excerpt',
+         'thumbnail',
+         'revisions',
+         'custom-fields',
+         'trackbacks'
+      ],
+      
+      'taxonomies' => [
+         'category',
+         'post_tag'
+      ],
+
+      'menu_position' => 5,
+      'exclude_from_search' => false
+
+   ];
+
+
+   register_post_type( 'course', $args );
+
+ }
+
+
+ add_action('init', 'easythingz_custom_post_type');
+
+
+
+
+
 
 
 
