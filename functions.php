@@ -170,7 +170,7 @@ add_action('widgets_init', 'easythingz_widget_setup');
       'parent_item_colon' => 'Parent Course'
    ];
 
-
+   
    $args = [
 
       'labels' => $labels,
@@ -193,16 +193,12 @@ add_action('widgets_init', 'easythingz_widget_setup');
          'custom-fields',
          'trackbacks'
       ],
-      
-      'taxonomies' => [
-         'category',
-         'post_tag'
-      ],
 
       'menu_position' => 5,
       'exclude_from_search' => false
 
    ];
+
 
 
    register_post_type( 'course', $args );

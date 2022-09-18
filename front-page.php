@@ -65,7 +65,7 @@
 
       $args = [
         "type" => "post",
-        "posts_per_page" => 3,
+        "posts_per_page" => 6,
         // "category__in" => [1, 9 , 8] for printing for group of categories
         // "cat" => 5 // for printing for series of categories
         // "category__not_in" => [2, 3 , 4] for not in previews in cases where post have multiple categories
