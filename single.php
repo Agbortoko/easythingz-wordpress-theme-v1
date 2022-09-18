@@ -28,12 +28,13 @@
                 <?= the_content() ?>
 
              </div>
-
+            
+             <!-- 
              <div class="blog__comment">
 
-                <?php if(comments_open() ) { comments_template(); } else { echo "<h3>No comments allowed </h3>"; }  ?>
+                <?php //if(comments_open() ) { comments_template(); } else { echo "<h3>No comments allowed </h3>"; }  ?>
 
-             </div>
+             </div> -->
 
         </main>
 
@@ -50,9 +51,27 @@
 
 
 
+    </section>
+
+            <section class="pagination p-1 mt-2">
+                    <div class="pagination__content container">
+                
+
+                        <div class="pagination__grid">
+
+                            <div class="pagination__grid--start"><?php previous_post_link(); ?> </div>
+
+                            <div class="pagination__grid--end"> <?php next_post_link(); ?></div>
+
+                        </div>
+                
+
+                    </div>
+        </section>
+            
 
 
-</section>
+
 
 
 

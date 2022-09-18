@@ -9,7 +9,7 @@
 
 <div class="post__content container">
     
-    <h3>📰 All Search results</h3>
+    <h3>📰 <?= the_archive_title() ?></h3>
 
     <div class="post__grid grid">
 
@@ -37,7 +37,7 @@
 
     <?php else: ?>
 
-        <h2> <?= __('No search results') ?></h2>
+        <h2> <?= __('No archive results') ?></h2>
 
     <?php endif ?>
 

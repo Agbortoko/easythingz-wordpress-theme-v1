@@ -123,6 +123,31 @@ function easythingz_widget_setup(){
 add_action('widgets_init', 'easythingz_widget_setup');
 
 
+/**
+ * ===========================================
+ *      Include Walker File
+ * ===========================================
+ */
+
+ require get_template_directory() . '/inc/class-nav-walker.php';
+
+
+ /**
+ * ===========================================
+ *      Head Function
+ *    remove version generator meta tag
+ * ===========================================
+ */
+
+ function easythingz_remove_version(){
+      return '';
+ }
+
+ add_filter('the_generator', 'easythingz_remove_version');
+
+
+
+
 
 
 
