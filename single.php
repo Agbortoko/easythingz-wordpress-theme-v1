@@ -8,11 +8,16 @@
 
     <div class="blog__grid">
 
-        <main class="blog__main">
+        <main id="post-<?= the_ID(); ?>" class="blog__main">
+
+        
+            <p><small> <?= the_category(" ") ?></small></p>
 
             <h1>
                 <?= the_title() ?>
             </h1>
+
+            <p><?= the_tags(); ?></p>
 
             <div class="blog__meta">
                 <div class="blog__meta-published"><span>Published:</span>  <?= the_time('F j, Y') ?> </div>    
@@ -21,6 +26,12 @@
              <div class="blog__info">
 
                 <?= the_content() ?>
+
+             </div>
+
+             <div class="blog__comment">
+
+                <?php if(comments_open() ) { comments_template(); } else { echo "<h3>No comments allowed </h3>"; }  ?>
 
              </div>
 

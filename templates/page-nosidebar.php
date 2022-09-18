@@ -1,3 +1,12 @@
+
+<?php
+
+/*
+    Template Name: Page with no sidebar
+*/
+
+?>
+
 <?php get_header(); ?>
 
 

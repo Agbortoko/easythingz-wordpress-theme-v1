@@ -5,6 +5,7 @@
             <div class="post__image" style="background-image: url('<?= the_post_thumbnail_url() ?>');"></div>
 
             <div class="post__text p-1">
+
                 <h3><?= the_title() ?></h3>
 
                  <?= the_excerpt() ?>
@@ -16,5 +17,5 @@
             </div>
 
         </div>
-    </a>
+</a>
 

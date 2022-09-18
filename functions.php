@@ -13,7 +13,7 @@ function easythingz_assets_enqueue(){
 
     wp_enqueue_style('montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800;900&display=swap', array(), '1.0.0','all');
 
-    wp_enqueue_script('customjs', get_template_directory_uri().'/assets/app/js/app.js', array(), '1.0.0', true);
+   //  wp_enqueue_script('customjs', get_template_directory_uri().'/assets/app/js/app.js', array(), '1.0.0', true);
 }
 
 
@@ -60,6 +60,7 @@ function easythingz_custom_logo() {
 add_action( 'init', 'easythingz_custom_logo' );
 
 add_theme_support('post-formats', ['aside', 'image', 'video']);
+add_theme_support('html5',  ['search-form']);
 
 function easythingz_widget_setup(){
 
@@ -120,6 +121,10 @@ function easythingz_widget_setup(){
 }
 
 add_action('widgets_init', 'easythingz_widget_setup');
+
+
+
+
 
 
 

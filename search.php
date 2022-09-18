@@ -9,7 +9,7 @@
 
 <div class="post__content container">
     
-    <h3>📰 All Blog Posts</h3>
+    <h3>📰 All Search results</h3>
 
     <div class="post__grid grid">
 
@@ -17,9 +17,13 @@
 
     <?php while( have_posts()): the_post(); ?>
     
-        <?= get_template_part('template-parts/content') ?>
+        <?= get_template_part('content', 'search') ?>
     
         <?php endwhile ?>
+
+    <?php else: ?>
+
+        <h2> <?= __('No search results') ?></h2>
 
     <?php endif ?>
 
