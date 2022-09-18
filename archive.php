@@ -10,6 +10,7 @@
 <div class="post__content container">
     
     <h3>📰 <?= the_archive_title() ?></h3>
+    <p class="taxonomy-description"> <?= the_archive_description() ?></p>
 
     <div class="post__grid grid">
 
