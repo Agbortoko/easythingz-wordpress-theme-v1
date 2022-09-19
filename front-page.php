@@ -100,7 +100,7 @@
 <section class="seemore p-1 mt-2">
 
     <div class="seemore__content container">
-        <a href="./blog">See More Post ▶</a>
+        <a href="<?= home_url()."/blog" ?>">See More Post ▶</a>
     </div>
 
 </section>
